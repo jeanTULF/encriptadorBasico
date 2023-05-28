@@ -14,7 +14,7 @@
 </head>
     <body>
         <div class="text_field">
-            <img src="/sources/Vector (1).svg">
+            <img src="letra.png">
             <textarea class="text_input" placeholder="Ingrese el texto deseado aqui" id="texto_ingresado"></textarea>
             <div class="text_area">
             <textarea name="" id="texto_mostrado" cols="30" rows="10" placeholder="Ningun mensaje fue encontrado Ingresa el texto que desees encriptar o desencriptar" readonly></textarea>
@@ -22,7 +22,7 @@
         </div>
     </div>
     <div class="extra_info">
-        <img src="/sources/exclamacion.svg">
+        <img src="exclamacion.png">
         <p>Solo letras minúsculas y sin acentos</p>
     </div>
     <div class="button_area">
@@ -89,6 +89,13 @@
             function mostrarBtn() {
                 document.getElementById('copiar').style.display = "block";
             }
+
+            /*function lectorAcentos(palabra) {
+                var texto = "";
+                if (){
+
+                }
+            }*/
 
             //Evento para mostrar el texto ingresado en el text area
                 encriptar.addEventListener("click", function() {
