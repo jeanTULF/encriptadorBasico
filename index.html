@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="icon" type="image/x-icon" href="sources/Vector.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/67096b3af6.js" crossorigin="anonymous"></script>
+    <title>Encriptador/Desencripador de textos</title>
+</head>
+    <body>
+        <div class="text_field">
+            <img src="/sources/Vector (1).svg">
+            <textarea class="text_input" placeholder="Ingrese el texto deseado aqui" id="texto_ingresado"></textarea>
+            <div class="text_area">
+            <textarea name="" id="texto_mostrado" cols="30" rows="10" placeholder="Ningun mensaje fue encontrado Ingresa el texto que desees encriptar o desencriptar" readonly></textarea>
+            <button type="button" id="copiar">Copiar</button>
+        </div>
+    </div>
+    <div class="extra_info">
+        <img src="/sources/exclamacion.svg">
+        <p>Solo letras minúsculas y sin acentos</p>
+    </div>
+    <div class="button_area">
+        <button type="button" id="encriptar">Encriptar</button>
+        <button type="button" id="desencriptar">Desencriptar</button>
+        </div>
+        
+        <div class="footer">
+            <div class="links">
+                <a href="https://www.linkedin.com/in/jean-marcos-polo-parker-087951271/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/jeanTULF"><i class="fa-brands fa-github"></i></a>
+            </div>
+                <p>&copyDesarrollado por Jean Polo - Alura Latam</p>
+        </div>
+        <script>
+            var input = document.getElementById("texto_ingresado");
+            var encriptar = document.getElementById("encriptar");
+            var desencriptar = document.getElementById("desencriptar")
+            var textoMostrado = document.getElementById("texto_mostrado");
+            var copiar = document.getElementById("copiar");
+
+            //Parametros para encriptar
+            let letraEncriptada = {
+                    "a": "ai",
+                    "e": "enter",
+                    "i": "imes",
+                    "o": "ober",
+                    "u": "ufat"
+                };
+
+            //funcion para reemplazar las vocales 
+            function reemplazoDeVocales(palabra) {
+                let nuevoValor = "";
+                for(posicion = 0; posicion < palabra.length; posicion++){
+                    var letra = palabra[posicion];
+                    var reemplazo = letraEncriptada[letra];
+                    if (reemplazo != undefined) {
+                        nuevoValor += reemplazo;
+                    }
+                    else {
+                        nuevoValor += letra;
+                    }
+                }
+                return(nuevoValor);
+                };
+
+            //Parametros para desencriptar    
+                let letraDesencriptada = {
+                    "ai": "a",
+                    "enter": "e",
+                    "imes": "i",
+                    "ober": "o",
+                    "ufat": "u"
+                }
+
+            //funcion para desencriptar 
+            function desencripador(palabra) {
+                for(let formato in letraDesencriptada) {
+                    palabra = palabra.replaceAll(formato, letraDesencriptada[formato]);
+                } 
+                return palabra;
+            }
+
+            function mostrarBtn() {
+                document.getElementById('copiar').style.display = "block";
+            }
+
+            //Evento para mostrar el texto ingresado en el text area
+                encriptar.addEventListener("click", function() {
+                    textoMostrado.value = reemplazoDeVocales(input.value);
+                    mostrarBtn();
+                });
+                desencriptar.addEventListener("click", function(){
+                    textoMostrado.value = desencripador(input.value);
+                    mostrarBtn();
+                });
+                copiar.addEventListener("click", () =>{
+                    navigator.clipboard.writeText(textoMostrado.value);
+                });
+
+            
+        </script>
+    </body>
+    
+</html>

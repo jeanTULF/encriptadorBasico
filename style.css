@@ -1,0 +1,294 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #F3F5FC;
+}
+
+.text_field {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text_field img {
+    position: relative;
+    bottom: 350px;
+    right: 120px;
+}
+
+.text_input {
+    background-color: transparent;
+    width: 50%;
+    height: 400px;
+    padding: 20px;
+    margin: 100px;
+    border-radius: 20px;
+    border: none;
+    font-size: 24px;
+    color: #0A3871;
+    ;
+}
+
+.text_input::placeholder {
+    color: #0A3871;
+}
+
+#texto_ingresado, #texto_mostrado {
+    resize: none;
+    outline: none;
+}
+
+.button_area {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 15px;
+    margin-left: 300px;
+}
+
+#encriptar, #desencriptar {
+ padding: 17px 16px ;
+ width: 350px;
+ border-radius: 15px;
+ margin-right: 10px;
+}
+
+#encriptar {
+    background-color: #0A3871;
+    color: #fff;
+    border: none;
+}
+
+#encriptar:hover {
+    cursor: pointer;
+}
+
+#encriptar:active {
+    background-color: #0e4d99;
+}
+
+#desencriptar {
+    background-color: #D8DFE8;
+    color: #0A3871;
+    border: 1px solid #0A3871;
+}
+
+#desencriptar {
+    cursor: pointer;
+}
+
+#desencriptar:active {
+    background-color: #aec1d8;
+}
+
+.extra_info {
+    display: flex;
+    flex-direction: row;
+    margin-left: 320px;
+}
+
+.extra_info p {
+    font-style: normal;
+    font-size: 12px;
+    color: #495057;
+    opacity: 0.8;
+    line-height: 150%;
+    padding: 0 0 0 10px;
+}
+
+.extra_info img {
+    width: 16px;
+    height: 16px;
+}
+
+.text_area {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 85px;
+}
+
+#texto_mostrado {
+    position: relative;
+    width: 300px;
+    height: 75vh;
+    padding: 15px;
+    margin-top: 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    color: #495057;
+    box-shadow: 0 4px 30px -8px rgba(0, 0, 0, 0.205);
+}
+
+#texto_mostrado::placeholder {
+    display: flex;
+    text-align: center;
+    justify-content: end;
+    padding-top: 390px;
+    background: no-repeat url(/sources/Muneco.png);
+    background-size: 110%;
+    background-position: center;
+}
+
+#copiar {
+    display: none;
+    padding: 16px;
+    margin-top: 50px;
+    border-radius: 15px;
+    background-color: transparent;
+    border: 1px solid #0A3871;
+}
+
+#copiar:hover {
+    cursor: pointer;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 200px;
+    margin-top: 10px;
+    background: #4950573a;
+}
+
+.footer a {
+    text-decoration: none;
+    font-weight: 500;
+    color: #0e4d99;
+    padding: 10px 0 0 10px;
+}
+
+.footer i {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+
+@media screen and (max-width:820px) {
+    .text_field {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .text_field img {
+        position: relative;
+        right: 350px;
+        top: 50px;
+        bottom: 0;
+    }
+
+    .text_input {
+        width: 70%;
+        height: 300px;
+    }
+
+    .text_area {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            top: 0;
+            width: 90%;
+    }
+
+    #texto_mostrado {
+        position: relative;
+        width: 100% !important;
+        height: 100% !important;
+        padding: 15px;
+        margin-top: 0;
+        font-size: 26px;
+        border: none;
+        border-radius: 25px;
+        color: #495057;
+        resize: none;
+        outline: none;
+        box-shadow: 0 4px 30px -8px rgba(0, 0, 0, 0.205);
+    }
+
+    #texto_mostrado::placeholder {
+        background: none;
+        text-align: center;
+        justify-content: center;
+        padding-top: 100px;
+        font-weight: bold;
+    }
+    
+    .extra_info {
+        margin: 15px 0 0 30px;
+    }
+    
+    .extra_info p {
+        font-size: 16px;
+    }
+
+    .button_area {
+        margin-left: auto;
+        justify-content: center;
+    }
+
+    .footer {
+        height: 200px;
+    }
+
+    .footer i {
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .text_field img {
+        position: relative;
+        right: 175px;
+        top: 20px;
+        bottom: 0;
+    }
+
+    .text_input {
+        width: 100%;
+        margin: 100px 0 0 0;
+    }
+
+    #texto_mostrado {
+        font-size: 16px;
+    }
+
+    #texto_mostrado::placeholder {
+        padding-top: 85px;
+    }
+
+    #copiar {
+        margin-top: 25px;
+    }
+
+    .button_area {
+        flex-direction: column;
+    }
+
+    #encriptar, #desencriptar {
+        width: 100%;
+        margin-right: 0;
+        border-radius: 25px;
+        padding: 27px;
+        margin: 10px 0 15px 0;
+        font-size: 16px;
+    }
+
+    .footer {
+        height: 250px;
+    }
+
+    .footer i {
+        font-size: 50px;
+    }
+}
